@@ -1,0 +1,17 @@
+id: dataapiextension
+key: dataapiextension
+name: DataAPI Extension
+version: 0.0.1
+author_name: Yuichi Takeuchi
+author_link: http://takeyu-web.com/
+description: This is a sample of DataAPI extension.
+
+applications:
+    data_api:
+        endpoints:
+            - id: list_plugins
+              route: /plugins
+              version: 1
+              handler:  $dataapiextension::DataAPIExtension::Endpoint::Plugin::_hdlr_list
+              requires_login: 0
+              verb: GET

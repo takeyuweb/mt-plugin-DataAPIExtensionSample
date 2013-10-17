@@ -10,7 +10,7 @@ sub _hdlr_list {
     # ここでユーザの権限などを確認すべき
     
     my @items = ();
-    my @plugins = MT::Component->select();
+    my @plugins = MT::Plugin->select();
     foreach my $plugin ( @plugins ) {
         next if $plugin && !$plugin->isa('MT::Plugin');
         my %item = map{ $_ => $plugin->$_ } qw(id key name version);
